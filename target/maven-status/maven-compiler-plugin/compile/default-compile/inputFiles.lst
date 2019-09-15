@@ -6,6 +6,7 @@ F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\service\StudentService.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\model\Student.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\AnswerRepository.java
+F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\QuestionCommandLineRunner.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\QuizApplication.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\QuestionRepository.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\UserCommandLineRunner.java

@@ -14,14 +14,16 @@ public class AnswerCommandLineRunner implements CommandLineRunner {
 
 	@Autowired
 	private AnswerRepository repository;
+	@Autowired
+	private QuestionRepository questionRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
 
-		repository.save(new Answer("A", null));
-		repository.save(new Answer("B", null));
-		repository.save(new Answer("C", null));
-		repository.save(new Answer("D", null));
+		repository.save(new Answer("qA", null, true));
+		repository.save(new Answer("qB", null, false));
+		repository.save(new Answer("qC", null, false));
+		repository.save(new Answer("qD", null, false));
 
 		for (Answer answer : repository.findAll()) {
 			log.info(answer.toString());

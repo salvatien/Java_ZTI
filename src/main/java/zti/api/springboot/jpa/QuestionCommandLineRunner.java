@@ -24,16 +24,20 @@ public class QuestionCommandLineRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Category category = categoryRepository.findById(new Long(1)).get();
+		Category category = categoryRepository.findById(new Long(145)).get();
 		Answer correctAnswer = new Answer();
-		Optional<Answer> correctAnswerOptional = answerRepository.findById(new Long(1));
+		Optional<Answer> correctAnswerOptional = answerRepository.findById(new Long(454));
 		if(correctAnswerOptional.isPresent())
 			correctAnswer = correctAnswerOptional.get();
-		List<Answer> answers = (List<Answer>) answerRepository.findAll();
-		repository.save(new Question(category, "Tu jest pytanko1: ", answers, correctAnswer));
-		repository.save(new Question(category, "Tu jest pytanko2: ", answers, correctAnswer));
-		repository.save(new Question(category, "Tu jest pytanko3: ", answers, correctAnswer));
-		repository.save(new Question(category, "Tu jest pytanko4: ", answers, correctAnswer));
+//		List<Answer> answers = (List<Answer>) answerRepository.findAll();
+		Question q1 = new Question(category, "Tu jest pytanko1: ");
+		repository.save(q1);
+		Question q2 = new Question(category, "Tu jest pytanko2: ");
+		q2.addAnswer(correctAnswer);
+
+		repository.save(q2);
+		//repository.save(new Question(category, "Tu jest pytanko3: ", answers, correctAnswer));
+		//repository.save(new Question(category, "Tu jest pytanko4: ", answers, correctAnswer));
 
 
 		for (Question question : repository.findAll()) {
