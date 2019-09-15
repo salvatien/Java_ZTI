@@ -1,95 +1,79 @@
-/**
- * 
- */
 package zti.api.springboot.jpa;
 
-/**
- * @author salva
- *
- */
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.transaction.Transactional;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
 
 @Entity(name = "Answer")
 @Table(name = "answer")
-@Transactional
-public class Answer {
+public class Answer  implements Serializable {
 
-	private Long id;
-	private String text;
-	
-	private Question question;
-	private boolean isCorrect;
-	
-	public Answer() {
+    //@Column(name = "ID", nullable = false, length = 10)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-	}
+    @NotBlank(message = "Text of answer must not be empty")
+    private String text;
 
-	public Answer(String text, Question question, boolean isCorrect) {
-		super();
-		this.text = text;
-		this.question = question;
-		this.isCorrect = isCorrect;
-	}
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	public Long getId() {
-		return id;
-	}
+    private boolean isCorrect;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
 
-	public String getText() {
-		return text;
-	}
-	
-	public void setText(String text) {
-		this.text = text;
-	}
-	
-	public boolean getIsCorrect() {
-		return isCorrect;
-	}
-	
-	public void setIsCorrect(boolean isCorrect) {
-		this.isCorrect = isCorrect;
-	}
-	
-	@ManyToOne(fetch = FetchType.EAGER)
-	public Question getQuestion() {
-		return question;
-	}
-	
-	public void setQuestion(Question question) {
-		this.question = question;
-//	    //prevent endless loop
-//	    if (sameAsFormer(question))
-//	      return ;
-//	    //set new question
-//	    Question oldQuestion = this.question;
-//	    this.question = question;
-//	    //remove from the old question
-//	    if (oldQuestion!=null)
-//	      oldQuestion.removeAnswer(this);
-//	    //set this is answer to question
-//	    if (question!=null)
-//	      question.addAnswer(this);
-	}
-	
-	public String toString() {
-        return "Answer with Id " + this.id;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "questionId", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Question question;
+
+
+    public Answer() {
     }
 
-	
-	private boolean sameAsFormer(Question newQuestion) {
-	    return question==null? newQuestion == null : question.equals(newQuestion);
-	}
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+    
+    public boolean getIsCorrect() {
+        return isCorrect;
+    }
+
+    public void setIsCorrect(boolean isCorrect) {
+        this.isCorrect = isCorrect;
+    }
+
+    //getter method to retrieve the QuestionId
+    public Long getQuestion_id(){
+        return question.getId();
+    }
+
+    //getter Method to get the question's text
+    public String getQuestionText(){
+        return question.getText();
+    }
+
+    @JsonIgnore
+    public Question getQuestion() {
+        return question;
+    }
+
+    @JsonIgnore
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
 }
