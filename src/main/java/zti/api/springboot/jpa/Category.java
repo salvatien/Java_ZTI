@@ -25,16 +25,11 @@ import org.hibernate.annotations.CascadeType;
 @Table(name = "category")
 @Transactional
 public class Category {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+
 	private Long id;
 	private String name;
 	private String description;
-	@OneToMany(
-	        mappedBy = "category",
-	        orphanRemoval = true
-	    )
-	@Cascade({CascadeType.SAVE_UPDATE})
+	
 	private List<Question> questions = new ArrayList<>();
 	
 	public Category() {
@@ -46,7 +41,9 @@ public class Category {
 		this.name = name;
 		this.description = description;
 	}
-
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getId() {
 		return id;
 	}
@@ -62,6 +59,14 @@ public class Category {
 		return description;
 	}
 	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
 
 	 /**
 	   * Returns a collection of questions. The 
@@ -69,10 +74,19 @@ public class Category {
 	   *  
 	   * @return a list of questions
 	   */
+	@OneToMany(
+	        mappedBy = "category",
+	        cascade = javax.persistence.CascadeType.ALL,
+	        orphanRemoval = true
+	    )
+	@Cascade({CascadeType.SAVE_UPDATE})
 	  public List<Question> getQuestions() {
 	    //defensive copy, nobody will be able to change 
 	    //the list from the outside
 	    return new ArrayList<Question>(questions);
+	  }
+	public void setQuestions(List<Question> questions) {
+	    this.questions = questions;
 	  }
 
 	  /**

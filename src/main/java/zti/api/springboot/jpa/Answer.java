@@ -20,11 +20,10 @@ import javax.transaction.Transactional;
 @Table(name = "answer")
 @Transactional
 public class Answer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+
 	private Long id;
 	private String text;
-	@ManyToOne(fetch = FetchType.EAGER)
+	
 	private Question question;
 	private boolean isCorrect;
 	
@@ -38,7 +37,8 @@ public class Answer {
 		this.question = question;
 		this.isCorrect = isCorrect;
 	}
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getId() {
 		return id;
 	}
@@ -63,23 +63,25 @@ public class Answer {
 		this.isCorrect = isCorrect;
 	}
 	
+	@ManyToOne(fetch = FetchType.EAGER)
 	public Question getQuestion() {
 		return question;
 	}
 	
 	public void setQuestion(Question question) {
-	    //prevent endless loop
-	    if (sameAsFormer(question))
-	      return ;
-	    //set new question
-	    Question oldQuestion = this.question;
-	    this.question = question;
-	    //remove from the old question
-	    if (oldQuestion!=null)
-	      oldQuestion.removeAnswer(this);
-	    //set this is answer to question
-	    if (question!=null)
-	      question.addAnswer(this);
+		this.question = question;
+//	    //prevent endless loop
+//	    if (sameAsFormer(question))
+//	      return ;
+//	    //set new question
+//	    Question oldQuestion = this.question;
+//	    this.question = question;
+//	    //remove from the old question
+//	    if (oldQuestion!=null)
+//	      oldQuestion.removeAnswer(this);
+//	    //set this is answer to question
+//	    if (question!=null)
+//	      question.addAnswer(this);
 	}
 	
 	public String toString() {

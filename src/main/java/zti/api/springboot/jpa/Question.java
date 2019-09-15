@@ -32,21 +32,13 @@ import org.hibernate.annotations.FetchMode;
 @Transactional
 public class Question {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "category_id")
+
 	private Category category;
 	
 	private String text;
-	@OneToMany(
-	        mappedBy = "question",
-	        orphanRemoval = true
-	    )
-	@Fetch(value=FetchMode.JOIN)
-	@Cascade({CascadeType.SAVE_UPDATE})
+
 	private List<Answer> answers = new ArrayList<>();
 
 	public Question() {
@@ -67,6 +59,8 @@ public class Question {
 		this.answers = answers;
 	}
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getId() {
 		return id;
 	}
@@ -75,6 +69,8 @@ public class Question {
 		this.id = id;
 	}
 	
+	@ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "category_id")
 	public Category getCategory() {
 		return category;
 	}
@@ -115,11 +111,22 @@ public class Question {
 	   *  
 	   * @return a list of answers
 	   */
+	@OneToMany(
+	        mappedBy = "question",
+	    	cascade = javax.persistence.CascadeType.ALL,
+	        orphanRemoval = true
+	    )
+	@Fetch(value=FetchMode.JOIN)
+	@Cascade({CascadeType.SAVE_UPDATE})
 	  public List<Answer> getAnswers() {
 	    //defensive copy, nobody will be able to change 
 	    //the list from the outside
 	    return new ArrayList<Answer>(answers);
 	  }
+	
+	public void setAnswers(List<Answer> answers) {
+		this.answers = answers;
+	}
 
 	  /**
 	   * Add new account to the person. The method keeps 
