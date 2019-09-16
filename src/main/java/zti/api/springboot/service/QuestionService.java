@@ -1,5 +1,6 @@
 package zti.api.springboot.service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -40,7 +41,7 @@ public class QuestionService {
     public Question createQuestion(Long genreId, Question question) throws Exception {
     	
     	
-        Set<Question> questions = new HashSet<>();
+        List<Question> questions = new ArrayList<>();
         Genre genre1 = new Genre();
 
         Optional<Genre> byId = genreRepository.findById(genreId);

@@ -6,8 +6,7 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 public class Question  implements Serializable {
@@ -26,7 +25,7 @@ public class Question  implements Serializable {
     
     
     @OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
-    private Set<Answer> answers = new HashSet<>();
+    private List<Answer> answers = new ArrayList<>();
     
 
 
@@ -68,11 +67,11 @@ public class Question  implements Serializable {
         this.genre = genre;
     }
     
-    public Set<Answer> getAnswers() {
+    public List<Answer> getAnswers() {
         return answers;
     }
 
-    public void setAnswers(Set <Answer> answers) {
+    public void setAnswers(List <Answer> answers) {
         this.answers = answers;
     }
     

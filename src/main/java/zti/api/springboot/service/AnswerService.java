@@ -1,5 +1,6 @@
 package zti.api.springboot.service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -37,7 +38,7 @@ public class AnswerService {
 	}
     
     public Answer createAnswer(Long questionId, Answer answer) {
-        Set<Answer> answers = new HashSet<>();
+        List<Answer> answers = new ArrayList<>();
         Question question1 = new Question();
 
         Optional<Question> byId = questionRepository.findById(questionId);

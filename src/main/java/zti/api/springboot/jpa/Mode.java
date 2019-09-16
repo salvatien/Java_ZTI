@@ -1,7 +1,9 @@
 package zti.api.springboot.jpa;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -15,7 +17,7 @@ public class Mode implements Serializable {
 	private String name;
 	
     @OneToMany(mappedBy = "mode", fetch = FetchType.EAGER)
-	private Set<Genre> genres = new HashSet<>();
+	private List<Genre> genres = new ArrayList<>();
 
 
     public Mode() {
@@ -37,11 +39,11 @@ public class Mode implements Serializable {
     }
     
     
-    public Set<Genre> getGenres() {
+    public List<Genre> getGenres() {
         return genres;
     }
 
-    public void setGenres(Set <Genre> genres) {
+    public void setGenres(List <Genre> genres) {
        this.genres = genres;
     }
 

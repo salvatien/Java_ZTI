@@ -2,8 +2,10 @@ F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\service\AuthorService.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\Answer.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\Author.java
+F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\controller\QuestionController.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\BookDao.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\Book.java
+F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\controller\GenreController.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\GenreRepository.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\Mode.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\AnswerRepository.java
@@ -24,4 +26,5 @@ F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\Genre.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\Question.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\User.java
+F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\controller\ModeController.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\service\GenreService.java

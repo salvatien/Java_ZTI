@@ -1,5 +1,6 @@
 package zti.api.springboot.service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -34,7 +35,7 @@ public class GenreService {
 	
 	public Genre createGenre(Long modeId, Genre genre) throws Exception {
     	
-        Set<Genre> genres = new HashSet<>();
+        List<Genre> genres = new ArrayList<>();
         Mode mode1 = new Mode();
 
         Optional<Mode> byId = modeRepository.findById(modeId);

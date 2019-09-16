@@ -1,5 +1,6 @@
 package zti.api.springboot.jpa;
 
+import java.util.List;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -65,7 +66,7 @@ public class QuestionCommandLineRunner implements CommandLineRunner {
 		
 		question1 = questionService.getQuestionById(question1.getId()).get();
 		
-		Set<Answer> answersToQuestion1 = question1.getAnswers();
+		List<Answer> answersToQuestion1 = question1.getAnswers();
 		Answer correct = questionService.getCorrectAnswer(question1.getId());
 		
 		for (Answer answer : answersToQuestion1) {
