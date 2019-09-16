@@ -7,6 +7,7 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import zti.api.springboot.jpa.Author;
@@ -57,6 +58,36 @@ public Book createBook(Long authorId, Book book) {
     return book1;
 
 }
+
+
+public Book updateBookById(Long bookId, Book bookRequest) {
+    if (!bookDao.existsById(bookId)) {
+        throw new ResourceNotFoundException("Book with id " + bookId + " not found");
+    }
+    Optional<Book> book = bookDao.findById(bookId);
+
+    if (!book.isPresent()) {
+        throw new ResourceNotFoundException("Book with id " + bookId + " not found");
+    }
+
+    Book book1 = book.get();
+    book1.setGenre(bookRequest.getGenre());
+    book1.setTitle(bookRequest.getTitle());
+
+    return bookDao.save(book1);
+}
+
+public ResponseEntity<Object> deleteBookById(long bookId) {
+    if (!bookDao.existsById(bookId)) {
+        throw new ResourceNotFoundException("Book with id " + bookId + " not found");
+    }
+
+    bookDao.deleteById(bookId);
+
+    return ResponseEntity.ok().build();
+
+}
+
 
     
 }

@@ -5,25 +5,30 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
-@Entity(name = "Category")
-@Table(name = "category")
-public class Category implements Serializable {
-//    @Column(name = "ID", nullable = false, length = 10)
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+public class Genre implements Serializable {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-    @NotBlank(message = "Enter the category name")
 	private String name;
-	private String description;
 	
-    @OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "genre", fetch = FetchType.EAGER)
 	private Set<Question> questions = new HashSet<>();
+    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "modeId", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Mode mode;
 
 
-    public Category() {
+    public Genre() {
     }
     
     public Long getId() {
@@ -40,13 +45,25 @@ public class Category implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-    public String getDescription() {
-        return description;
+    
+    public Long getModeId(){
+        return mode.getId();
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getModeName(){
+        return mode.getName();
     }
+
+    @JsonIgnore
+    public Mode getMode() {
+        return mode;
+    }
+
+    @JsonIgnore
+    public void setMode(Mode mode) {
+        this.mode = mode;
+    }
+    
     
     public Set<Question> getQuestions() {
         return questions;

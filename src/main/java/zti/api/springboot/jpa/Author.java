@@ -8,7 +8,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "Author")
 public class Author implements Serializable {
 
     @Column(name = "ID", nullable = false, length = 10)

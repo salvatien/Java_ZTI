@@ -9,7 +9,6 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Book")
 public class Book  implements Serializable {
 
     @Column(name = "ID", nullable = false, length = 10)

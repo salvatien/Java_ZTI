@@ -1,7 +1,5 @@
 package zti.api.springboot.jpa;
 
-import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -11,7 +9,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import zti.api.springboot.service.AnswerService;
-import zti.api.springboot.service.CategoryService;
+import zti.api.springboot.service.GenreService;
+import zti.api.springboot.service.ModeService;
 import zti.api.springboot.service.QuestionService;
 
 @Component
@@ -23,21 +22,26 @@ public class QuestionCommandLineRunner implements CommandLineRunner {
 	@Autowired
 	private QuestionService questionService;
 	@Autowired
-	private CategoryService categoryService;
+	private GenreService genreService;
 	@Autowired
 	private AnswerService answerService;
+	@Autowired
+	private ModeService modeService;
 
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Category category = new Category();
-		category.setName("cat1");
-		category.setDescription("some description");
-		Category category1 = categoryService.createCategory(category);
+		Mode mode = new Mode();
+		mode.setName("Zgadnij autora!");
+		Mode mode1 = modeService.createMode(mode);
+		
+		Genre genre = new Genre();
+		genre.setName("Rock");
+		Genre genre1 = genreService.createGenre(mode.getId(), genre);
 		
 		Question question = new Question();
 		question.setText("question1");
-		Question question1 = questionService.createQuestion(category1.getId(), question);
+		Question question1 = questionService.createQuestion(genre1.getId(), question);
 		
 		Answer answer1 = new Answer();
 		answer1.setText("answer1");

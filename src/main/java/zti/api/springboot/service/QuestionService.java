@@ -10,8 +10,8 @@ import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import zti.api.springboot.jpa.Answer;
-import zti.api.springboot.jpa.Category;
-import zti.api.springboot.jpa.CategoryRepository;
+import zti.api.springboot.jpa.Genre;
+import zti.api.springboot.jpa.GenreRepository;
 import zti.api.springboot.jpa.Question;
 import zti.api.springboot.jpa.QuestionRepository;
 
@@ -20,7 +20,7 @@ public class QuestionService {
 	@Autowired
 	private QuestionRepository questionRepository;
 	@Autowired
-	private CategoryRepository categoryRepository;
+	private GenreRepository genreRepository;
 	
 	public List<Question> getQuestions() {
         return questionRepository.findAll();
@@ -30,32 +30,32 @@ public class QuestionService {
         return questionRepository.save(question);
     }
     
-    public Optional<Question> getQuestionById(Long id) {
+    public Optional<Question> getQuestionById(Long id) throws Exception {
     	 if (!questionRepository.existsById(id)) {
-    	        throw new ResourceNotFoundException("Question with id " + id + " not found");
+    	        throw new Exception("Not found");
     	    }
 		return questionRepository.findById(id);
 	}
     
-    public Question createQuestion(Long categoryId, Question question) {
+    public Question createQuestion(Long genreId, Question question) throws Exception {
     	
     	
         Set<Question> questions = new HashSet<>();
-        Category category1 = new Category();
+        Genre genre1 = new Genre();
 
-        Optional<Category> byId = categoryRepository.findById(categoryId);
+        Optional<Genre> byId = genreRepository.findById(genreId);
         if (!byId.isPresent()) {
-            throw new ResourceNotFoundException("Category with id " + categoryId + " not found");
+            throw new Exception("Not found");
         }
         
-        Category category = byId.get();
+        Genre genre = byId.get();
 
-        question.setCategory(category);
+        question.setGenre(genre);
 
         Question question1 = questionRepository.save(question);
         questions.add(question1);
         
-        category1.setQuestions(questions);
+        genre1.setQuestions(questions);
         return question1;
 
     }
