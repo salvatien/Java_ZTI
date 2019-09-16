@@ -14,6 +14,8 @@ import org.hibernate.annotations.OnDeleteAction;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
+@Table(name = "genre")
+
 public class Genre implements Serializable {
 
 	@Id

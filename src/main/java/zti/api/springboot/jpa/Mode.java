@@ -9,6 +9,7 @@ import java.util.Set;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "mode")
 public class Mode implements Serializable {
 
 	@Id

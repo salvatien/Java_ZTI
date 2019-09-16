@@ -9,6 +9,8 @@ import java.io.Serializable;
 import java.util.*;
 
 @Entity
+@Table(name = "question")
+
 public class Question  implements Serializable {
 
     @Id
