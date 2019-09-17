@@ -11,7 +11,7 @@ import zti.api.springboot.model.ModePojo;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@CrossOrigin
 @RestController
 public class ModeController {
 

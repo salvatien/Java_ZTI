@@ -12,7 +12,7 @@ import zti.api.springboot.jpa.*;
 import java.util.List;
 import java.util.Optional;
 
-
+@CrossOrigin(origins = "http://localhost:9000")
 @RestController
 public class AuthorBookController {
 
