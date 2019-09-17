@@ -11,11 +11,9 @@ F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\model\QuestionsListPojo.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\Mode.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\AnswerRepository.java
-F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\controller\AuthorBookController.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\model\ModePojo.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\QuizApplication.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\QuestionRepository.java
-F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\controller\StudentController.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\ModeRepository.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\model\AnsweredQuestionsListPojo.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\UserRepository.java

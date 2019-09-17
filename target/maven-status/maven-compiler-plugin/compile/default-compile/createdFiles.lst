@@ -6,7 +6,6 @@ zti\api\springboot\service\StudentService.class
 zti\api\springboot\model\Course.class
 zti\api\springboot\QuizApplication.class
 zti\api\springboot\jpa\Book.class
-zti\api\springboot\jpa\QuestionCommandLineRunner.class
 zti\api\springboot\service\QuestionService.class
 zti\api\springboot\jpa\Author.class
 zti\api\springboot\controller\ModeController.class
@@ -19,7 +18,6 @@ zti\api\springboot\model\GenrePojo.class
 zti\api\springboot\jpa\Genre.class
 zti\api\springboot\jpa\Question.class
 zti\api\springboot\service\BookService.class
-zti\api\springboot\controller\StudentController.class
 zti\api\springboot\model\AnsweredQuestionsListPojo.class
 zti\api\springboot\jpa\Mode.class
 zti\api\springboot\service\GenreService.class
@@ -31,7 +29,6 @@ zti\api\springboot\jpa\GenreRepository.class
 zti\api\springboot\model\AnswerPojo.class
 zti\api\springboot\model\ModePojo.class
 zti\api\springboot\service\AnswerService.class
-zti\api\springboot\controller\AuthorBookController.class
 zti\api\springboot\model\AnsweredQuestionPojo.class
 zti\api\springboot\model\QuestionPojo.class
 zti\api\springboot\jpa\AnswerRepository.class

@@ -18,6 +18,7 @@ public class ModeController {
     @Autowired
     ModeService modeService;
 
+    @CrossOrigin
     @RequestMapping(value = "/modes", method = RequestMethod.GET)
     public List<ModePojo> getModes() {
     	List<ModePojo> modePojos = new ArrayList<>();
@@ -29,7 +30,7 @@ public class ModeController {
         return modePojos;
     }
     
-
+    @CrossOrigin
     @RequestMapping(value = "/modes/{modeId}", method = RequestMethod.GET)
     public ModePojo getModeById(@PathVariable(value = "modeId") Long modeId) {
         try {

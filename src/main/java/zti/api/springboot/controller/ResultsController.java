@@ -21,6 +21,7 @@ public class ResultsController {
     @Autowired
     QuestionService questionService;
 
+    @CrossOrigin
     @RequestMapping(value = "/results", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public AnsweredQuestionsListPojo SubmitQuizAndGetResults(@RequestBody List<UserAnswerPojo> userAnswers) {
     	List<AnsweredQuestionPojo> answeredQuestionsList = new ArrayList<>();

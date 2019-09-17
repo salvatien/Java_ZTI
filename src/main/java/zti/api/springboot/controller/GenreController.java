@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
+@CrossOrigin
 @RestController
 public class GenreController {
 
@@ -22,7 +22,7 @@ public class GenreController {
     @Autowired
     ModeService modeService;
 
-
+    @CrossOrigin
     @RequestMapping(value = "/genres", method = RequestMethod.GET)
     public List<GenrePojo> getGenres() {
     	List<GenrePojo> genrePojos = new ArrayList<>();
@@ -33,7 +33,8 @@ public class GenreController {
         }
         return genrePojos;
     }
-
+    
+    @CrossOrigin
     @RequestMapping(value = "/genres/{genreId}", method = RequestMethod.GET)
     public GenrePojo getGenreById(@PathVariable(value = "genreId") Long genreId) {
         try {
@@ -43,6 +44,7 @@ public class GenreController {
 		}
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/modes/{modeId}/genres", method = RequestMethod.GET)
     public List<GenrePojo> getGenresByModeId(@PathVariable(value = "modeId") Long modeId) {
     	

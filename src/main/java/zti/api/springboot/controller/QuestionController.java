@@ -23,7 +23,7 @@ public class QuestionController {
     @Autowired
     GenreService genreService;
 
-
+    @CrossOrigin
     @RequestMapping(value = "/questions", method = RequestMethod.GET)
     public QuestionsListPojo getQuestions() {
         
@@ -38,6 +38,7 @@ public class QuestionController {
         return list;
     }
     
+    @CrossOrigin
     @RequestMapping(value = "/questions/{questionId}", method = RequestMethod.GET)
     public QuestionPojo getQuestionById(@PathVariable(value = "questionId") Long questionId) {
         try {
@@ -47,6 +48,7 @@ public class QuestionController {
 		}
     }
     
+    @CrossOrigin
     //http://localhost:8080/questions/genresQuestions?genreIds=3,10&questionsAmount=3
     @RequestMapping("/questions/genresQuestions")
     public QuestionsListPojo GetNumberOfQuestionsFromGenres(@RequestParam List<Long> genreIds, int questionsAmount) 
