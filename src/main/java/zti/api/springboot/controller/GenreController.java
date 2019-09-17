@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @CrossOrigin
 @RestController
@@ -31,7 +32,7 @@ public class GenreController {
         	GenrePojo genrePojo = new GenrePojo(genre);
         	genrePojos.add(genrePojo);
         }
-        return genrePojos;
+        return genrePojos.stream().distinct().collect(Collectors.toList()); 
     }
     
     @CrossOrigin
@@ -62,7 +63,7 @@ public class GenreController {
 			e.printStackTrace();
 		}
 
-        return genrePojos;
+        return genrePojos.stream().distinct().collect(Collectors.toList());
     	
     }
 

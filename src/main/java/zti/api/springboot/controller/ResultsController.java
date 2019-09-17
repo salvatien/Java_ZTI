@@ -12,6 +12,7 @@ import zti.api.springboot.model.UserAnswerPojo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @CrossOrigin
@@ -37,7 +38,7 @@ public class ResultsController {
         	
         }
         AnsweredQuestionsListPojo list = new AnsweredQuestionsListPojo();
-        list.questions = answeredQuestionsList;
+        list.questions = answeredQuestionsList.stream().distinct().collect(Collectors.toList()); 
         return list;
     }
     

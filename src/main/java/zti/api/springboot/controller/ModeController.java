@@ -10,6 +10,7 @@ import zti.api.springboot.model.ModePojo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @CrossOrigin
 @RestController
@@ -27,7 +28,7 @@ public class ModeController {
         	ModePojo modePojo = new ModePojo(mode);
         	modePojos.add(modePojo);
         }
-        return modePojos;
+        return modePojos.stream().distinct().collect(Collectors.toList());
     }
     
     @CrossOrigin

@@ -34,7 +34,7 @@ public class QuestionController {
         	questionPojos.add(questionPojo);
         }
         QuestionsListPojo list = new QuestionsListPojo();
-        list.questions = questionPojos;
+        list.questions = questionPojos.stream().distinct().collect(Collectors.toList());
         return list;
     }
     
@@ -75,7 +75,7 @@ public class QuestionController {
         	questionPojos.add(questionPojo);
         }
         QuestionsListPojo list = new QuestionsListPojo();
-        list.questions = questionPojos;
+        list.questions = questionPojos.stream().distinct().collect(Collectors.toList());
         return list;
     }
     
