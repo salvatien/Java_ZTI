@@ -66,8 +66,8 @@
         <version>1.6.0</version>  
         <configuration> 
           <schemaVersion>V2</schemaVersion>  
-          <resourceGroup>javaee-spring-boot-rest-api-1568665493206-rg</resourceGroup>  
-          <appName>javaee-spring-boot-rest-api-1568665493206</appName>  
+          <resourceGroup>javaee-spring-boot-resource-group</resourceGroup>  
+          <appName>javaee-spring-boot-rest-api</appName>  
           <region>westeurope</region>  
           <pricingTier>B1</pricingTier>  
           <!-- Begin of App Settings  -->  
