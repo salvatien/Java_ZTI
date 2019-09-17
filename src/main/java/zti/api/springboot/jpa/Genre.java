@@ -23,10 +23,10 @@ public class Genre implements Serializable {
 	private Long id;
 	private String name;
 	
-    @OneToMany(mappedBy = "genre", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "genre", fetch = FetchType.LAZY)
 	private List<Question> questions = new ArrayList<>();
     
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "modeId", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Mode mode;

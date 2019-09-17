@@ -17,7 +17,7 @@ public class Mode implements Serializable {
 	private Long id;
 	private String name;
 	
-    @OneToMany(mappedBy = "mode", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "mode", fetch = FetchType.LAZY)
 	private List<Genre> genres = new ArrayList<>();
 
 

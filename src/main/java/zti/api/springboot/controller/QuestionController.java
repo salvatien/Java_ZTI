@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import zti.api.springboot.service.*;
 import zti.api.springboot.jpa.*;
 import zti.api.springboot.model.QuestionPojo;
-import zti.api.springboot.model.QuestionsListPojo;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,7 +24,7 @@ public class QuestionController {
 
     @CrossOrigin
     @RequestMapping(value = "/questions", method = RequestMethod.GET)
-    public QuestionsListPojo getQuestions() {
+    public List<QuestionPojo> getQuestions() {
         
         List<QuestionPojo> questionPojos = new ArrayList<>();
         List<Question> questions =  questionService.getQuestions();
@@ -33,9 +32,7 @@ public class QuestionController {
         	QuestionPojo questionPojo = new QuestionPojo(question);
         	questionPojos.add(questionPojo);
         }
-        QuestionsListPojo list = new QuestionsListPojo();
-        list.questions = questionPojos.stream().distinct().collect(Collectors.toList());
-        return list;
+        return questionPojos.stream().distinct().collect(Collectors.toList());
     }
     
     @CrossOrigin
@@ -51,7 +48,7 @@ public class QuestionController {
     @CrossOrigin
     //http://localhost:8080/questions/genresQuestions?genreIds=3,10&questionsAmount=3
     @RequestMapping("/questions/genresQuestions")
-    public QuestionsListPojo GetNumberOfQuestionsFromGenres(@RequestParam List<Long> genreIds, int questionsAmount) 
+    public List<QuestionPojo> GetNumberOfQuestionsFromGenres(@RequestParam List<Long> genreIds, int questionsAmount) 
     {
     	List<QuestionPojo> questionPojos = new ArrayList<>();
 
@@ -74,10 +71,6 @@ public class QuestionController {
         	QuestionPojo questionPojo = new QuestionPojo(question);
         	questionPojos.add(questionPojo);
         }
-        QuestionsListPojo list = new QuestionsListPojo();
-        list.questions = questionPojos.stream().distinct().collect(Collectors.toList());
-        return list;
+        return questionPojos.stream().distinct().collect(Collectors.toList());
     }
-    
-
 }

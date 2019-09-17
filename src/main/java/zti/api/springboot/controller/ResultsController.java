@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import zti.api.springboot.service.*;
 import zti.api.springboot.jpa.*;
 import zti.api.springboot.model.AnsweredQuestionPojo;
-import zti.api.springboot.model.AnsweredQuestionsListPojo;
 import zti.api.springboot.model.UserAnswerPojo;
 
 import java.util.ArrayList;
@@ -24,7 +23,7 @@ public class ResultsController {
 
     @CrossOrigin
     @RequestMapping(value = "/results", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public AnsweredQuestionsListPojo SubmitQuizAndGetResults(@RequestBody List<UserAnswerPojo> userAnswers) {
+    public List<AnsweredQuestionPojo> SubmitQuizAndGetResults(@RequestBody List<UserAnswerPojo> userAnswers) {
     	List<AnsweredQuestionPojo> answeredQuestionsList = new ArrayList<>();
         for(UserAnswerPojo userAnswerPojo : userAnswers) {
         	try {
@@ -37,9 +36,7 @@ public class ResultsController {
         	}
         	
         }
-        AnsweredQuestionsListPojo list = new AnsweredQuestionsListPojo();
-        list.questions = answeredQuestionsList.stream().distinct().collect(Collectors.toList()); 
-        return list;
+        return answeredQuestionsList.stream().distinct().collect(Collectors.toList()); 
     }
     
 }

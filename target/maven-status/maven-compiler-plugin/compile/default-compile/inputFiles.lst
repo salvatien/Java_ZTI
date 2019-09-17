@@ -8,14 +8,12 @@ F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\controller\GenreController.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\GenreRepository.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\model\GenrePojo.java
-F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\model\QuestionsListPojo.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\Mode.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\AnswerRepository.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\model\ModePojo.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\QuizApplication.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\QuestionRepository.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\ModeRepository.java
-F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\model\AnsweredQuestionsListPojo.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\UserRepository.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\model\AnsweredQuestionPojo.java
 F:\ztiv4\spring-boot-examples-master\spring-boot-rest-services\src\main\java\zti\api\springboot\jpa\AuthorDao.java

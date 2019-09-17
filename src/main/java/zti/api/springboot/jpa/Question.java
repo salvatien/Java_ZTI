@@ -20,13 +20,13 @@ public class Question  implements Serializable {
     private String text;
 
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "genreId", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Genre genre;
     
     
-    @OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "question", fetch = FetchType.LAZY)
     private List<Answer> answers = new ArrayList<>();
     
 

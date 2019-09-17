@@ -23,7 +23,7 @@ public class Answer  implements Serializable {
     private boolean isCorrect;
 
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "questionId", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Question question;

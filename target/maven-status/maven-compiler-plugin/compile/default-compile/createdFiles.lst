@@ -18,12 +18,10 @@ zti\api\springboot\model\GenrePojo.class
 zti\api\springboot\jpa\Genre.class
 zti\api\springboot\jpa\Question.class
 zti\api\springboot\service\BookService.class
-zti\api\springboot\model\AnsweredQuestionsListPojo.class
 zti\api\springboot\jpa\Mode.class
 zti\api\springboot\service\GenreService.class
 zti\api\springboot\jpa\User.class
 zti\api\springboot\model\AnswerPojoWithIsCorrect.class
-zti\api\springboot\model\QuestionsListPojo.class
 zti\api\springboot\controller\GenreController.class
 zti\api\springboot\jpa\GenreRepository.class
 zti\api\springboot\model\AnswerPojo.class
