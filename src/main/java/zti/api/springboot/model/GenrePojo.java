@@ -6,6 +6,8 @@ public class GenrePojo {
 	public Long id;
 	public String name;
 	
+	public GenrePojo() {}
+	
 	public GenrePojo(Genre genre) {
 		this.id = genre.getId();
 		this.name = genre.getName();

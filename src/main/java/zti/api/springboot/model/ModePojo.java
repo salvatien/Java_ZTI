@@ -6,6 +6,8 @@ public class ModePojo {
 	public Long id;
 	public String name;
 	
+	public ModePojo() {}
+	
 	public ModePojo(Mode mode) {
 		this.id = mode.getId();
 		this.name = mode.getName();

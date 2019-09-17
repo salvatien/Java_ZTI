@@ -43,7 +43,7 @@ public class GenreController {
 		}
     }
 
-    @RequestMapping(value = "/{modeId}/genres", method = RequestMethod.GET)
+    @RequestMapping(value = "/modes/{modeId}/genres", method = RequestMethod.GET)
     public List<GenrePojo> getGenresByModeId(@PathVariable(value = "modeId") Long modeId) {
     	
     	

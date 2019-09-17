@@ -6,6 +6,8 @@ public class AnswerPojo {
 	public Long id;
 	public String text;
 	
+	public AnswerPojo() {}
+	
 	public AnswerPojo(Answer answer) {
 		this.id = answer.getId();
 		this.text = answer.getText();

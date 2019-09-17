@@ -11,6 +11,8 @@ public class QuestionPojo {
 	public String text;
 	public List<AnswerPojo> answers;
 	
+	public QuestionPojo() {}
+	
 	public QuestionPojo(Question question) {
 		this.id = question.getId();
 		this.text = question.getText();
